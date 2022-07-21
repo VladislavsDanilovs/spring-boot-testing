@@ -99,7 +99,7 @@ public class MockAnnotationTest {
 
         verify(applicationDao, times(1)).checkNull(nullStudent);
     }
-    
+
     @DisplayName("Multiple Stubbing")
     @Test
     public void stubbingConsecutiveCalls() {
