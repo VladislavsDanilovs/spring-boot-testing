@@ -54,7 +54,7 @@ public class StudentAndGradeService {
         studentDao.save(student);
     }
 
-    public boolean checkIfStudentExists(int id) {
+    public boolean checkIfStudentIsNull(int id) {
         Optional<CollegeStudent> student = studentDao.findById(id);
         if (student.isPresent()) {
             return true;
@@ -63,7 +63,7 @@ public class StudentAndGradeService {
     }
 
     public void deleteStudent(int id) {
-        if (checkIfStudentExists(id)) {
+        if (checkIfStudentIsNull(id)) {
             studentDao.deleteById(id);
             mathGradeDao.deleteByStudentId(id);
             scienceGradeDao.deleteByStudentId(id);
@@ -78,7 +78,7 @@ public class StudentAndGradeService {
 
     public boolean createGrade(double grade, int studentId, String gradeType) {
 
-        if (!checkIfStudentExists(studentId)) {
+        if (!checkIfStudentIsNull(studentId)) {
             return false;
         }
 
@@ -145,7 +145,7 @@ public class StudentAndGradeService {
 
     public GradebookCollegeStudent studentInformation(int id) {
 
-        if(!checkIfStudentExists(id)){
+        if(!checkIfStudentIsNull(id)){
             return null;
         }
 

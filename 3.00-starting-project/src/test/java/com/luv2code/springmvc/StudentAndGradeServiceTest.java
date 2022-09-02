@@ -147,9 +147,9 @@ public class StudentAndGradeServiceTest {
     @Test
     public void isStudentIdExistsCheck() {
 
-        assertTrue(studentService.checkIfStudentExists(1));
+        assertTrue(studentService.checkIfStudentIsNull(1));
 
-        assertFalse(studentService.checkIfStudentExists(0));
+        assertFalse(studentService.checkIfStudentIsNull(0));
     }
 
     @Test
